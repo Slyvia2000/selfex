@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		var kwords=['明月','青天'];
+		var str=kwords.join("|");//明月|白鹭|青天
+		var reg=new RegExp(str);//明月|白鹭|青天/
+		var msg=prompt('请输入');
+		var i=msg.search(reg);
+		console.log(i)
+		if(i!=-1){
+			document.write(`<h1 style="color:red">包含敏感词，禁止发送</h1>`);
+		}else{
+			document.write(`<h1>${msg}</h1>`)
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        *{margin:0;padding:0;box-sizing: border-box;}
+        #container{width:100%;}
+        #container button{
+            display: block;
+            margin:20px;
+        }
+        #container>div:nth-child(2)>p{margin: 0 auto;}
+        #container>div:nth-child(1)>ul{display:flex;}
+        #container>div:nth-child(1)>ul>li{
+            height:50px;
+            color:#686868;
+            line-height:50px;
+            margin-left: 20px;
+            font-weight: bolder;
+        }
+        #container>div:nth-child(2){
+            background-image:linear-gradient()
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="container" class="">
+            <div class="bg-dark">
+                <ul class="list-unstyled list-inline">
+                    <li class="">Bootstrap中文网</li>
+                    <li class="">起步</li>
+                    <li class="">全局CSS样式</li>
+                    <li class="">组件</li>
+                    <li class="">JavaScript插件</li>
+                    <li class="">定制</li>
+                </ul>
+            </div>
+            <div class="">
+                <p class="h1">Bootstrap</p>
+                <p class="text-secondary">简洁、直观、强悍的前端开发框架，让web开发更迅速、简单。</p>
+                <button class="btn btn-primary">Bootstrap3中文文档（v4.0.0）</button>
+                <button class="btn btn-primary">Bootstrap2中文文档（v3.3.7）</button>
+            </div>
+            <div class="">
+                <img src="boot-1.png"/><img src="boot-2.png"/><img src="boot-3.png"/><img src="boot-4.png"/>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

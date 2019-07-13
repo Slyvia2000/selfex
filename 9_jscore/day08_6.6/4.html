@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    var t=0;
+    function task1(){
+        t+=3;
+        console.log(`任务1耗时3S`);
+    };
+    function task2(){
+        t+=6;
+        console.log(`任务2耗时6s`);
+        //后来的代码
+        var err=false;
+        if(err==true){
+            var t=new Date();
+            console.log(`出错啦！at：${t.toLocaleDateString}`)
+        };
+    };
+    task1();
+    task2();
+</script>
+</body>
+</html>

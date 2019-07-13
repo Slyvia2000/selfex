@@ -1,0 +1,88 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>实现带样式的表单验证</title>
+	<link rel="Stylesheet" href="css/1.css" />
+ </head>
+ <body>
+	<form id="form1">
+		<h2>增加管理员</h2>
+		<table>
+			<tr>
+				<td>姓名：</td>
+        <td>
+					<input name="username"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_info">
+						10个字符以内的字母、数字或下划线的组合
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" name="pwd"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_info">6位数字</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+          <input type="submit" value="保存"/>
+          <input type="reset" value="重填"/>
+				</td>
+			</tr>				
+	    </table>
+	</form>
+	<script>
+		// 1.查找要修改的元素
+		var txtName=document.getElementsByName('username')[0];
+		var txtPwd=document.getElementsByName('pwd')[0];
+		// 2.绑定处理函数
+			/* 文本框&密码框获得焦点时 */
+			txtName.onfocus=txtPwd.onfocus=function(){
+				// 3.查找要修改的元素
+				var div_vali=this.parentElement.nextElementSibling.children[0];
+				// 4.修改元素
+				div_vali.className="";
+			};
+			/* 文本框|密码框失去焦点时 */
+			// 文本框失去焦点时
+			// txtName.onblur=function(){
+			// 	var txt=this;
+			// 	// 3.查找要修改的元素
+			// 	var div_vali=txt.parentElement.nextElementSibling.children[0];
+			// 	// 4.修改元素
+			// 	if(/^\w{1,10}$/.test(txt.value)){
+			// 		div_vali.className="vali_success";
+			// 	}else{
+			// 		div_vali.className="vali_fail";
+			// 	};
+
+			// };
+			// =====>txtName.onblur=vali()可行？6/22--->不行
+			// 文本框失焦事件
+			txtName.onblur=function(){vali(this,/^\w{1,10}$/);}
+			// 密码框失焦事件
+			txtPwd.onblur=function(){vali(this,/^\d{6}$/);}
+			/* 封装函数 */
+			function vali(txt,reg){
+				// 3.查找要修改的元素
+				var div_vali=txt.parentElement.nextElementSibling.children[0];
+				// 4.修改元素
+				if(reg.test(txt.value)){
+					div_vali.className="vali_success";
+				}else{
+					div_vali.className="vali_fail";
+				};
+
+			};
+	</script>
+ </body>
+</html>

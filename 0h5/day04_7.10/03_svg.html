@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{ text-align:center; }
+        svg{ background-color:coral; }
+    </style>
+</head>
+<body>
+    <svg id='s3' width='500' height='400'></svg>
+    <script>
+        var s3=document.getElementById('s3');
+        for(var i=0;i<1000;i++){
+            var c=document.createElementNS('http://www.w3.org/2000/svg','circle');
+            var r=Math.random()*20+5;
+            var cy=Math.floor(Math.random()*400);
+            var cx=Math.floor(Math.random()*500);
+            var fill=`rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`;
+            c.setAttribute('r',r);
+            c.setAttribute('cy',cy);
+            c.setAttribute('cx',cx);
+            c.setAttribute('fill',fill);
+            c.setAttribute('fill-opacity',Math.random());
+            s3.appendChild(c);
+            // 绑定点击事件
+            c.onclick=function(){
+                // 防止当前元素再次被点击，当前圆只能被点击1次
+                this.onclick=null;
+                var t=setInterval(()=>{
+                    // 7.1元素半径增加
+                    var r=this.getAttribute('r');
+                    r*=1.05;
+                    this.setAttribute('r',r)
+                    // 7.2元素透明度减小
+                    var p=this.getAttribute('fill-opacity');
+                    p*=0.9;
+                    this.setAttribute('fill-opacity',p)
+                    // 7.3删除元素
+                    if(p<0.05){
+                        clearInterval(t);
+                        s3.removeChild(this);
+                    }
+                },150)
+            }
+        }
+    </script>
+</body>
+</html>

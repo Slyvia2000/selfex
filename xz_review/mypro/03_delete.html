@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_delete</title>
+</head>
+<body>
+	<div>
+		<input type="text" id="uid" placeholder="请输入要删除的uid">
+		<button onclick="user_delete()">删除</button>
+	</div>
+	<script>
+		function user_delete(){
+			//创建异步对象
+			var xhr=new XMLHttpRequest();
+			//接收数据
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					alert(result);
+				};
+			};
+			//打开连接
+			xhr.open('get','http://127.0.0.1:8080/pro/user_delete?uid='+uid.value,true);
+			//发送请求
+			xhr.send();
+		}
+	</script>
+</body>
+</html>

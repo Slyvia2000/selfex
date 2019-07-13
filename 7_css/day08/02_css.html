@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="my.css">
+	<style>
+		p{color:red}
+		h5{color:red;}
+		h5{color:blue;}
+		h6{color:red !important;}
+	</style>
+	
+</head>
+<body>
+	<h6 style="color:yellow">!important和内联样式的比较</h6>
+	<!--3.优先级 内部样式和外部样式  -->
+		<h5>优先级</h5>
+	<!--层叠性  -->
+<h3 id="p1">css的层叠</h3>
+	<div>
+		this is div
+		<p>
+			this is p
+			<br>
+			<span>
+				this is span
+			</span>
+		</p>
+	</div>
+	
+</body>
+</html>

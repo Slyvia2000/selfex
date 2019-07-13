@@ -1,0 +1,7 @@
+/*Ãæ°üĞ¼µ¼º½*/
+.container>div>div:nth-child(3)>ul.breadcrumb{
+    background-color: transparent;
+}
+.container>div>div:nth-child(3)>ul>.breadcrumb-item+.breadcrumb-item::before{
+    content: "|";
+}

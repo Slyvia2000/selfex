@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button>按钮1</button>
+    <!-- 03.js 5秒 -->
+    <!-- <script src='03.js'></script> -->
+    <script>
+        var w=new Worker('03.js');
+        w.onmessage=function(e){
+            var m=e.data;
+            var msg=document.getElementById('msg');
+            msg.innerHTML=m;
+        }
+
+        // 发送
+        w.postMessage(7000);
+    </script>
+    <button>按钮2</button>
+    <div id='msg'></div>
+</body>
+</html>

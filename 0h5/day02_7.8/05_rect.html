@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{text-align:center}
+        canvas{background:red}
+    </style>
+</head>
+<body>
+    <canvas id="c3" width='500' height='400'></canvas>
+    <script>
+        // 1.获取画布
+        var c3=document.getElementById('c3');
+        // 2.获取画笔
+        var ctx=c3.getContext('2d');
+        // 3.空心矩形
+        ctx.strokeStyle='#fff';
+        ctx.lineWidth=5;
+        ctx.strokeRect(250,200,100,100);
+        // 4.实心矩形
+        ctx.fillStyle='pink';
+        ctx.fillRect(0,0,100,100);
+        // 5.清除一个矩形范围内的所有元素
+        ctx.clearRect(0,0,500,400);
+    </script>
+</body>
+</html>

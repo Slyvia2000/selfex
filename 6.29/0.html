@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	function pay(){
+		if(arguments.length==0){
+			console.log('用手机支付...');
+		}else if(arguments.length==1){
+			console.log(`用现金支付，收您${arguments[0]}元`);
+		}else if(arguments.length==2){
+			console.log(`从您卡号${arguments[0]}扣款成功`);
+		}
+	};
+	pay();
+	pay(100);
+	pay('6225 1234','123456')
+</script>
+</body>
+</html>

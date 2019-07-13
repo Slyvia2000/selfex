@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script>
+        var user={
+            uname:'dingding',
+            pwd:'123456',
+            changepwd:function(){console.log('修改密码...')},
+            logout:function(){console.log('注销...')}
+        };
+    </script>
+</head>
+<body>
+    <script>
+        var {uname:name,logout:logout}=user;
+        logout();
+        console.log(`welcome ${name}`);
+
+    </script>
+</body>
+</html>

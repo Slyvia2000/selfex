@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <img id='trash' src="../res/trash.png">
+    <hr>
+    <div class="container">
+        <img id='p3' src="../res/p3.png">
+        <img id='p4' src="../res/p4.png">
+        <img id='p5' src="../res/p5.png">
+    </div>
+    <script>
+        // 1.获取所有元素
+        var trash=document.getElementById('trash');
+        var list=document.querySelectorAll('.container img');
+        // 2.创建全局变量
+        var pid=-1;
+        // 3.为源对象绑定拖动开始事件
+        for(var item of list){
+            item.ondragstart=function(){
+                pid=this.id;
+                console.log(pid);
+            };
+            item.ondrag=function(){};
+            item.ondragend=function(){};
+        };
+        trash.ondragover=function(e){ e.preventDefault(); }
+        // 5.获取回收站绑定释放事件
+        trash.ondrop=function(){
+            console.log(pid);
+            // 6.依据pid获取小飞机并且删除
+            var p=document.getElementById(pid);
+            p.remove();
+        };
+    </script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#parent{
+			height:300px;
+			border:2px solid #000;
+			display:flex;/*把父元素变为弹性容器*/
+			/*设置主轴方向*/
+			flex-flow:row nowrap;
+			justify-content:space-around;
+			align-items:stretch;
+		}
+		#d1,#d2,#d3,#d4{
+			/*width:200px;*//*height:200px;*/
+			font:40px "mv boli";
+		}
+		#d1{background:#ff0;}
+		#d2{background:#f0f;}
+		#d3{background:#0ff;}
+		#d4{background:#00f;float:right;}
+	</style>
+</head>
+<body>
+	<div id="parent">
+		<div id="d1">1</div>
+		<div id="d2">2</div>
+		<div id="d3">3</div>
+		<div id="d4">4</div>
+	</div>
+</body>
+</html>

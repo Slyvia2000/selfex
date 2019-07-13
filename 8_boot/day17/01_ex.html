@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .media>img{width:8rem;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>模态框</h1>
+    <button class="btn btn-danger" data-toggle="modal" data-target="#mydemo">打开模态框</button>
+    <div id="mydemo" class="modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4>填写明星</h4>
+                    <button data-dismiss="modal" class="close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    <input class="form-control" type="text"/>
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-danger">关闭</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h1>媒体对象</h1>
+    <div class="media border p-3">
+        <!-- 图片-->
+        <img class="rounded mr-3" src="chengliang.jpg"/>
+        <!-- 图片说明-->
+        <div class="media-body">
+            <p>闪闪亮亮</p>
+            <p>程序员制作</p>
+        </div>
+    </div>
+    <h1>手风琴</h1>
+    <div id="parent">
+        <!-- 第一张卡片-->
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#one">选项一</a>
+            </div>
+            <div class="collapse" id="one" data-parent="#parent">
+                <div class="card-body">技术</div>
+            </div>
+        </div>
+        <!-- 第二张卡片-->
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#two">选项二</a>
+            </div>
+            <div class="collapse" id="two" data-parent="#parent">
+                <div class="card-body">梦想</div>
+            </div>
+        </div>
+        <!-- 第三张卡片-->
+        <div class="card">
+            <div class="card-header">
+                <a class="card-link" data-toggle="collapse" href="#three">选项三</a>
+            </div>
+            <div class="collapse" id="three" data-parent="#parent">
+                <div class="card-body">梦想</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

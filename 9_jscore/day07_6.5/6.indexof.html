@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //双色球机选
+        var reds=[];
+        while(reds.length<6){
+            var r=Math.ceil(Math.random()*33);
+            if(reds.indexOf(r)==-1){
+                reds.push(r);
+            }
+        };
+        reds.sort(function(a,b){return a-b});
+        var b=Math.ceil(Math.random()*16)
+        document.write(`${reds}|${b}`)
+    </script>
+</body>
+</html>

@@ -1,0 +1,18 @@
+$myblue:#0aa1ed;
+$fontcolor:#fff;
+$myheight:2.5rem;
+$fontsize:0.8rem;
+a{
+  display: block;
+  width: 8rem;height: $myheight;
+  background: $myblue;
+  color: $fontcolor;
+  font-size: $fontsize;
+  text-align: center;
+  line-height: $myheight;
+  margin:4px 10px;
+  text-decoration: none;
+  border-radius: 0.2rem;
+  &:hover{color:#ff0000}
+
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .breadcrumb-item+.breadcrumb-item::before{
+            content:">>";
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>动画条纹进度条</h1>
+    <div class="progress bg-dark">
+        <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger w-75">
+        </div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+
+    <h1>条纹进度条</h1>
+    <div class="progress bg-dark">
+        <div class="progress-bar progress-bar-striped bg-danger w-50"></div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>普通进度条</h1>
+    <div class="progress bg-dark">
+        <div class="progress-bar w-25 bg-danger"></div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>面包屑导航</h1>
+    <hr/>
+    <div class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">学习一</a></li>
+        <li class="breadcrumb-item"><a href="#">学习二</a></li>
+        <li class="breadcrumb-item"><a href="#">学习三</a></li>
+        <li class="breadcrumb-item"><a href="#">学习四</a></li>
+    </div>
+</div>
+</body>
+</html>

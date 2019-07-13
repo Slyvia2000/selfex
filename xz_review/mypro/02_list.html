@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>02_list</title>
+</head>
+<body onload="list()">
+	<table border="1px">
+		<thead>
+			<tr>
+				<th>登录名称</th>
+				<th>电子邮箱</th>
+				<th>联系方式</th>
+				<th>用户姓名</th>
+				<th>用户性别</th>
+				<th>操作</th>
+			</tr>
+		</thead>
+		<tbody id="contain"></tbody>
+	</table>
+	<script>
+		//加载用户的方法
+		function list(){
+			//创建异步对象
+			var xhr=new XMLHttpRequest();
+			//接收数据
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=JSON.parse(xhr.responseText);
+					var html="";
+					for(var i=0;i<result.length;i++){
+						if(result[i].gender==1){
+										gender="男";
+									}else if(result[i].gender==0){
+										gender="女";
+									}else{
+										gender="不详";
+									};						
+							html+=`
+								<tr>
+									<td>${result[i].uname}</td>
+									<td>${result[i].email}</td>
+									<td>${result[i].phone}</td>
+									<td>${result[i].user_name}</td>
+									<td>${gender}</td>
+									<td>
+										<a href='javascript:user_delete(${result[i].uid})'>删除</a>
+										<a href='04_update.html?uid=${result[i].uid}'>修改</a>
+									</td>
+								</tr>
+							`;					
+					};
+					contain.innerHTML=html;
+				};
+			};
+			//打开连接
+			xhr.open('get','http://127.0.0.1:8080/pro/list',true);
+			//发送请求
+			xhr.send();
+		};
+		//删除用户的方法
+		function user_delete(u_id){
+			//创建异步对象
+			var xhr=new XMLHttpRequest();
+			//接收数据
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					alert(result);
+					list();
+				};
+			};
+			//打开连接
+			xhr.open('get','http://127.0.0.1:8080/pro/user_delete?uid='+u_id,true);
+			//发送请求
+			xhr.send();
+		}
+	</script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		#container{
+			height:300px;
+			border:2px solid #f00;
+			display:flex;
+/*			flex-flow:row-reverse wrap;*/
+		}
+		.d1{
+			width:200px;height:200px;
+			background:#ff0;
+			flex-shrink:5;
+			align-self:flex-end;
+/*			order:10;*/
+/*			flex-grow:0;*/
+		}
+		.d2{
+			width:200px;
+			background:#f0f;
+			flex-shrink:10;
+			align-self:stretch;
+/*			flex-grow:0;*/
+/*			order:5;*/
+		}
+		.d3{
+			width:200px;height:200px;
+			background:#0ff;
+			flex-shrink:1;
+/*			flex-grow:0;*/
+/*			order:7;*/
+		}
+		div{font:60px "mv boli";}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<div class="d1">1</div>
+		<div class="d2">2</div>
+		<div class="d3">3</div>
+	</div>
+</body>
+</html>

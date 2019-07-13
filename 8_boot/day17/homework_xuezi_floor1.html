@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        /*调试用边框*/
+        /*
+        *{box-sizing: border-box}
+        .container>div>div:nth-child(1),
+        .container>div>div:nth-child(2),
+        .container>div>div:nth-child(3),
+        .container>div>div:nth-child(4)>div>div:nth-child(1),
+        .container>div>div:nth-child(4)>div>div:nth-child(2),
+        .container>div>div:nth-child(4)>div>div:nth-child(3){
+            border: 3px solid #ffffff;
+        }
+         */
+
+        .top_h{height: 377px;}
+        .bottom_h{height: 235px}
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <!-- 第一格-->
+        <div class="col-md-7 col-sm-12  top_h p-0 mb-2">
+            <div class="top_h bg-dark mr-sm-0 mr-md-2"></div>
+        </div>
+        <!-- 第二格-->
+        <div class="col-md-5 col-sm-12 p-0 mb-2">
+            <div class="top_h bg-dark ml-md-2 ml-sm-0"></div>
+        </div>
+        <!-- 第三格-->
+        <div class="col-md-5 col-sm-12 p-0">
+            <div class="bottom_h bg-dark mr-md-2 mr-sm-0 mb-md-0 mb-sm-2"></div>
+        </div>
+        <!-- 第四格-->
+        <div class="col-md-7 col-sm-12 p-0">
+            <div class="row mx-0">
+                <div class="col-md-4 col-sm-12 p-0">
+                    <div class="bottom_h bg-dark mr-md-2 mr-sm-0"></div>
+                </div>
+                <div class="col-md-4 col-sm-12 p-0">
+                    <div class="bottom_h bg-dark mr-md-2 mr-sm-0 mt-sm-2 mt-md-0"></div>
+                </div>
+                <div class="col-md-4 col-sm-12 p-0">
+                    <div class="bottom_h bg-dark mt-sm-2 mt-md-0"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

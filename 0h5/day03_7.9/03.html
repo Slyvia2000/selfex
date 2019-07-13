@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{ text-align:center; }
+        canvas{ background-color:lightcoral; }
+    </style>
+</head>
+<body>
+    <canvas id='c3' width='500' height=400></canvas>
+    <script>
+        var c3=document.getElementById('c3');
+        var ctx=c3.getContext('2d');
+        // 外围轮廓
+        ctx.beginPath();
+        ctx.arc(250,200,100,30*Math.PI/180,330*Math.PI/180);
+        ctx.lineTo(250,200);
+        ctx.closePath();
+        ctx.stroke();
+        // 蓝色眼球
+        ctx.beginPath();
+        ctx.arc(270,155,25,0,2*Math.PI);
+        ctx.fillStyle='blue';
+        ctx.fill();
+        // 折色眼神
+        ctx.beginPath();
+        ctx.arc(255,145,5,0,2*Math.PI);
+        ctx.fillStyle='#fff';
+        ctx.fill();
+    </script>
+</body>
+</html>

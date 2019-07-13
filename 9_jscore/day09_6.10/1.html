@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    class Student{
+        constructor(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        };
+        intr(){
+            console.log(`i am ${this.sname},i am ${this.sage}`);
+        };
+    };
+    var lilei=new Student('lilei',11);
+    var hmm=new Student('hmm',12);
+    console.log(lilei);
+    console.log(hmm);
+    lilei.intr();
+    hmm.intr();
+</script>
+</body>
+</html>

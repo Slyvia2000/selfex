@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var father={
+            money:1000000,
+            car:"infiniti"
+        }
+        function Student(sname,sage){
+            this.sname=sname;
+            this.sage=sage;
+        }
+        Student.prototype=father;
+        var lilei=new Student("lilei",18);
+        var hmm=new Student("hmm",19);
+        console.log(hmm);
+        console.log(hmm.money,hmm.car);
+        console.log(lilei);
+        console.log(lilei.money,lilei.car);
+        console.log(hmm.__proto__==lilei.__proto__);
+    </script>
+</body>
+</html>

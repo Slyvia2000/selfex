@@ -1,0 +1,6 @@
+1. 1_regexp.pptx是第一天正则表达式的笔记，请各位预习。
+2. 安装live server
+ 根据视频live server setup.wmv，安装liveServer.vsix
+3. 安装RegexpBuddy4.7.0
+ 根据视频setup regex.wmv，安装RegexpBuddy4.7.0.rar
+4. 根据font-size.wmv调整vs code字体

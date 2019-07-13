@@ -1,0 +1,82 @@
+$my_width:521px;
+$jd-red:#f10215;
+$before-content:"zi said";
+$my_border:1px solid #00f;
+$my_color:$jd-red;
+$my_border:2px dotted #f00 !default;
+#d1{
+  border:$my_width solid $my_color;
+  $mysize:123px;
+  width: $mysize $my_border;
+}
+#d2:before{
+  content: $before-content;
+  border: $my_border;
+}
+#content{
+  background: #0000ff;
+  div.top{
+    border:1px solid #f00;
+    h1{
+      color:#000;
+    }
+    p{color:#0aa1ed;}
+  }
+  div.bottom{
+    border:1px dotted #f00;
+  }
+}
+a{
+  width:21px;
+  &:hover{width: 20px;}
+}
+div{
+  border:{
+    width:2px;
+    style:solid;
+    color:#000;
+  }
+}
+nav,div,header,footer{
+  a{width: 100px;}
+}
+div#main{
+  width:200px;height: 200px;
+  background: #ff0000;
+  transition: {property: all;duration: 2s;timing-function: linear;};
+  &:hover{
+    background: #ffc107;
+    border-radius: 50%;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

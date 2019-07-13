@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>echarts</title>
+    <script src='../echarts.js'></script>
+</head>
+<body>
+    <div id="main" style='width:500px;height:400px'></div>
+    <div id="main2" style='width:500px;height:400px'>
+    
+    <script>
+        // 0.销售数据
+        var list=[
+            {name:'冰箱',val:190},
+            {name:'电视',val:290},
+            {name:'洗衣机',val:90},
+            {name:'空调',val:110}
+        ];
+        var names=[];
+        var vals=[]
+        for(var item of list){
+            names.push(item.name);
+            vals.push(item.val);
+        }
+        // 1.获取显示图像容器
+        var main=document.getElementById('main');
+        // 2.创建mychart对象
+        var mychart=echarts.init(main);
+        // 3.创建配置项目
+        // 柱状统计图
+        var option={
+            title:{text:'销售统计图'},//顶部标题
+            xAxis:{data:names},//x轴数据
+            yAxis:{},//y轴数据
+            series:[{type:'bar',data:vals}]//数据源
+        };
+        // 4.将配置添加mychart
+        mychart.setOption(option);
+
+        // 折线图
+        
+        var main2=document.getElementById('main2');
+        var mychart2=echarts.init(main2);
+        var option2={
+            title:{text:'销售折线图'},//顶部标题
+            xAxis:{data:names},//x轴数据
+            yAxis:{},//y轴数据
+            series:[{type:'pie',data:vals,smooth:true}]//数据源
+        };
+        // 4.将配置添加mychart
+        mychart2.setOption(option2);
+        
+    </script>
+</body>
+</html>

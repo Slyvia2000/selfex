@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{ text-align:center; }
+        canvas{ background-color:lightcoral; }
+    </style>
+</head>
+<body>
+    <canvas id='c3' width='800' height='800'></canvas>
+    <script>
+        var c3=document.getElementById('c3');
+        var ctx=c3.getContext('2d');
+        // 创建路径
+        /*
+        ctx.beginPath();
+        ctx.moveTo(250,200);
+        ctx.lineTo(500,400);
+        ctx.lineTo(300,300);
+        ctx.lineTo(250,200);
+        //ctx.stroke();
+        ctx.fillStyle='#555';
+        ctx.fill();
+        
+        // 圆形
+        ctx.beginPath();
+        ctx.arc(250,200,100,0,180*Math.PI/180);
+        ctx.stroke();
+        // 左上角半圆
+        ctx.beginPath();
+        ctx.arc(50,50,50,-90*Math.PI/180,90*Math.PI/180);
+        ctx.strokeStyle='green';
+        ctx.stroke();
+        */
+        // 整圆
+        ctx.beginPath();
+        ctx.arc(275,360,100,0,2*Math.PI);
+        // 边框宽度与样式
+        ctx.lineWidth=15;
+        ctx.strokeStyle='#444';
+        ctx.stroke();
+        // 
+        ctx.beginPath();
+        ctx.arc(160,250,100,0,2*Math.PI);
+        ctx.strokeStyle='#3b7cb6';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(525,360,100,0,2*Math.PI);
+        ctx.strokeStyle='#2d9b2d';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(400,250,100,0,2*Math.PI);
+        ctx.strokeStyle='#150f11';
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(640,250,100,0,2*Math.PI);
+        ctx.strokeStyle='#fc0203';
+        ctx.stroke();
+    </script>
+</body>
+</html>

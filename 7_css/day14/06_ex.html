@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		div{
+			width:200px;height:200px;
+			border:2px solid #000;
+			background-image:url(apple.jpg);
+			animation-name:eat;
+			animation-duration:2s;
+		}
+		@keyframes eat{
+			0%{background-position:-16px -20px;}
+			10%{background-position:-264px -20px;}
+			20%{background-position:-498px -20px;}
+			30%{background-position:-742px -20px;}
+			40%{background-position:-964px -20px;}
+			50%{background-position:-16px -253px;}
+			60%{background-position:-264px -253px;}
+			70%{background-position:-498px -253px;}
+			80%{background-position:-742px -253px;}
+			90%{background-position:-964px -253px;}
+			100%{background-position:-16px -480px;}
+		}
+	</style>
+</head>
+<body>
+	<div></div>
+</body>
+</html>

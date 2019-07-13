@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    function liang(){
+        return new Promise(
+            function(door){
+                var bang="亮的棒";
+                console.log(`亮拿着${bang}起跑。。。`);
+                setTimeout(
+                    function(){
+                        console.log("亮到达终点");
+                        door(bang);
+                    },
+                    6000
+                );
+            }
+        );
+    };
+    function ran(bang){
+        return new Promise(
+            function(door){
+                console.log(`然拿着${bang}起跑。。。`);
+                setTimeout(function(){
+                    console.log("然到达终点");
+                    door(bang);
+                },4000);
+            }
+        );
+    };
+    function yaner(bang){
+        return new Promise(
+            function(door){
+                console.log(`燕拿着${bang}起跑。。。`);
+                setTimeout(function(){
+                    console.log(`燕拿着${bang}到达终点`);
+                    door();
+                },2000);
+            }
+        );
+    };
+    liang().then(ran).then(yaner).then(function(){
+        console.log("比赛结束");
+    })
+</script>
+</body>
+</html>

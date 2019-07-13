@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>homework0</title>
+    <style>
+        #container{
+            font:16px
+        }
+        div{
+            border:1px solid #000;
+            box-sizing: border-box;
+        }
+        #container>div:nth-child(1),
+        #container>div:nth-child(2),
+        #container>div:nth-child(3){
+            float: left;
+        }
+        #container:after{
+            content: "";
+            display: block;
+            clear: both;
+        }
+        #container>div>ul>li{
+            list-style: none;
+        }
+        @media screen and (min-width: 992px) {
+            #container>div:nth-child(1){
+                width: 20%;
+            }
+            #container>div:nth-child(2){
+                width: 60%;
+            }
+            #container>div:nth-child(3){
+                width: 20%;
+            }
+            #container>div:nth-child(2)>img{
+                width: 25%;
+            }
+        }
+        @media screen and (min-width: 768px) and (max-width: 991px){
+            #container>div:nth-child(1){
+                width: 30%;
+            }
+            #container>div:nth-child(2){
+                width: 70%;
+            }
+            #container>div:nth-child(3){
+                display: none;
+            }
+            #container>div:nth-child(2)>img{
+                width: 25%;
+            }
+        }
+        @media screen and (max-width: 767px){
+            #container>div:nth-child(1){
+                width: 100%;
+            }
+            #container>div:nth-child(2){
+                width: 100%;
+            }
+            #container>div:nth-child(3){
+                display: none;
+            }
+            #container>div:nth-child(2)>img{
+                width: 50%;
+            }
+        }
+    </style>
+</head>
+<body>
+<div id="container">
+    <div>
+        <ul>
+            <li><a href="#">豆蔻年华</a></li>
+            <li><a href="#">花样青春</a></li>
+            <li><a href="#">而立之年</a></li>
+            <li><a href="#">激情岁月</a></li>
+        </ul>
+    </div>
+    <div>
+        <img src="1.jpg"/><img src="../2.jpg"/><img src="../3.jpg"/><img src="../4.jpg"/>
+        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab accusamus adipisci at autem dicta eligendi enim eveniet excepturi facere harum id iure libero magni modi necessitatibus nobis officiis possimus provident quae qui, quia repudiandae sit sunt suscipit tempore ullam ut velit, veniam vitae voluptate! Cumque error, facere laudantium, molestias numquam placeat possimus provident quam quasi quia sunt veniam. Accusantium ipsum itaque libero maxime molestiae odit perspiciatis quia soluta sunt voluptatum. Ad adipisci aut deleniti dolor dolorem doloremque iste itaque, laboriosam nisi nostrum omnis praesentium, quod sapiente tempore temporibus totam vel veritatis voluptatem? Adipisci aperiam architecto commodi cupiditate doloribus ea earum esse eveniet explicabo facere illo ipsa ipsum iste laborum maiores minus nam necessitatibus neque nisi pariatur perspiciatis quas, ratione repudiandae saepe sequi ullam ut vero? Aliquam aut ducimus earum illum libero, nulla omnis qui temporibus! Aliquid aut corporis delectus dolores ducimus enim eos fugit id itaque veritatis! Adipisci beatae consectetur distinctio minima molestiae molestias nemo omnis optio soluta. Atque doloremque laudantium provident saepe sequi? Amet consectetur cupiditate debitis deleniti dolor dolores facilis fugit id ipsum labore, modi molestias necessitatibus neque nobis nostrum, quam quo quod ratione rem reprehenderit soluta sunt unde vel velit vero, voluptas voluptatibus. Doloribus ipsam neque quos. Accusamus adipisci alias aperiam consequatur cum debitis deserunt dicta dolores dolorum error esse eveniet explicabo facere impedit ipsa ipsum maxime neque numquam perferendis quos rerum soluta, vitae. Ad dolores eaque enim et harum incidunt, laudantium magni modi neque obcaecati perferendis quidem voluptas voluptate. Amet corporis cum debitis dicta, eius incidunt molestias nihil officiis omnis quidem ratione repudiandae tenetur vel. Adipisci alias amet aspernatur assumenda culpa cum fuga harum hic in ipsam ipsum magni molestiae officia perspiciatis porro, praesentium recusandae similique sint veniam voluptatum? Culpa dicta illo incidunt ipsa laboriosam provident quam velit voluptas. Deleniti distinctio dolorum ea esse exercitationem incidunt itaque laudantium maiores nulla odit porro quas quibusdam quis reprehenderit rerum, suscipit tenetur. Aspernatur at beatae hic obcaecati porro! Accusamus aliquid autem cumque earum est et excepturi expedita fuga iusto labore molestiae necessitatibus nemo, nobis, provident quia quod recusandae unde? Alias aliquam commodi debitis delectus, deleniti dicta dolorem eius eligendi enim est facilis fugit harum hic ipsam iure maiores nobis numquam odit porro possimus quam quia quisquam quos repudiandae saepe? Adipisci, doloribus error esse hic magnam natus nesciunt quam quas vitae! Aliquam blanditiis dolores hic inventore nobis quae reiciendis vero voluptates? Commodi, cumque cupiditate dolorem eligendi esse hic labore nobis placeat quidem quisquam ratione repellat sit suscipit tempora vero voluptates voluptatibus! Ab aliquid animi aspernatur aut, corporis cupiditate ducimus, eius enim error fugit iusto libero odio officiis omnis quae qui, ratione? Accusantium cum eaque excepturi itaque labore laudantium modi nesciunt, voluptatum. Ab architecto atque autem dolorem doloribus eaque est harum hic ipsa magnam natus porro quae, repellat sapiente sed suscipit ut vitae! Cum delectus dolores laboriosam laborum natus nemo numquam pariatur, perspiciatis quos ratione voluptates voluptatibus? Consectetur cumque in itaque laudantium, magni possimus quaerat repellat velit vitae! Aliquid commodi cum cumque enim iure modi non numquam, quidem sit sunt voluptatem.
+        </p>
+    </div>
+    <div>
+        右侧的广告：Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus ipsa non qui quidem quo sed similique voluptas voluptatum. Asperiores assumenda autem ea fuga harum hic ipsam itaque, molestias nam sed! Accusamus amet animi consequuntur debitis dolore enim, eos esse est eum excepturi incidunt ipsum laborum laudantium magni maxime modi, mollitia non numquam officia placeat quae quod rem temporibus totam unde. Architecto cupiditate dolores eligendi esse exercitationem harum illo ipsam laudantium magni, officia omnis temporibus voluptas voluptatem?
+    </div>
+</div>
+</body>
+</html>

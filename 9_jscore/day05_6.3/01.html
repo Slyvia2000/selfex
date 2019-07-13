@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var lilei={
+            sname:"li lei",
+            sage:11,
+            intr:function(){
+                console.log(`
+                    i am ${this.sname},i am ${this.sage}
+                `);
+            }
+        }
+        function clone(obj){
+            var newObj={};
+            for(var name in obj){
+                //newObj.name=obj.name;//错误
+                //newObj["name"]=obj["name"];//错误
+                newObj[name]=obj[name];//正确
+                
+            }
+            return newObj;
+        }
+        var lilei2=clone(lilei);
+        console.log(lilei);
+        console.log(lilei2);
+        console.log(lilei==lilei2);
+    </script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_list</title>
+</head>
+<body onload="getlist()">
+	<table id="content" border="1px">
+		<tr>
+			<td>登录名称</td>
+			<td>电子邮箱</td>
+			<td>联系方式</td>
+			<td>用户姓名</td>
+			<td>用户性别</td>
+			<td>操作</td>
+		</tr>
+	</table>
+	<script>
+		function getlist(){
+			//创建对象
+			var xhr=new XMLHttpRequest();
+			//监听
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=JSON.parse(xhr.responseText);
+					for(var i=0;i<result.length;i++){
+						content.innerHTML+=`
+							<td>${result[i].uname}</td>
+							<td>${result[i].email}</td>
+							<td>${result[i].phone}</td>
+							<td>${result[i].user_name}</td>
+							<td>${result[i].gender}</td>
+							<td>
+								<a href="#">删除</a>
+								<a href="#">修改</a>
+							</td>
+						`;
+					};
+				};
+			};
+			//打开连接
+			xhr.open('get','http://127.0.0.1:8080/ajax/userlist01',true);
+			//发送请求
+			xhr.send();
+		};
+	</script>
+</body>
+</html>

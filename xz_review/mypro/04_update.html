@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>04_update</title>
+</head>
+<body onload="user_query()">
+	<div>
+		<p>用户编号：<span id="uid"></span></p>
+		<p>用户昵称：<input type="text" id="uname"></p>
+		<p>用户密码：<input type="text" id="upwd"></p>
+		<p>用户邮箱：<input type="text" id="email"></p>
+		<p>用户手机：<input type="text" id="phone"></p>
+		<p>真实姓名：<input type="text" id="user_name"></p>
+		<p>
+			<input type="radio" name="gender" value="1" id="m">
+			<label for="m">男</label>
+			<input type="radio" name="gender" value="0" id="f">
+			<label for="f">女</label>
+			<input type="radio" name="gender" value="2" id="un">
+			<label for="u">保密</label>
+		</p>
+		<button onclick="user_update()">修改</button>
+	</div>
+	<script>
+		//查询用户的方法
+		function user_query(){
+			//接收数据
+			var urlParams=new URLSearchParams(location.search);
+			var c_uid=urlParams.get('uid');
+			//1.创建异步对象
+			var xhr=new XMLHttpRequest();
+			//4.接收数据
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=JSON.parse(xhr.responseText);
+					uid.innerHTML=result.uid;
+					uname.value=result.uname;
+					upwd.value=result.upwd;
+					email.value=result.email;
+					phone.value=result.phone;
+					user_name.value=result.user_name;
+					if(result.gender==1){
+						m.checked=true;
+						console.log(m.name);
+					}else if(result.gender==0){
+						f.checked=true;
+					}else{
+						un.checked=true;
+					};
+				};
+			};
+			//2.打开连接
+			xhr.open('get','http://127.0.0.1:8080/pro/query?uid='+c_uid,true);
+			//3.发送请求
+			xhr.send();
+		}
+		//修改用户的方法
+		function user_update(){
+			//接收数据
+			var u_gender="1";
+			if(f.checked){
+				u_gender=0;
+			};
+			//1.创建异步对象
+			var xhr=new XMLHttpRequest();
+			//4.接收响应
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					if(result==1){
+						alert('修改成功');
+						//js的页面跳转，BOM
+						location.href="http://127.0.0.1:8080/02_list.html";
+					}else{
+						alert('修改失败');
+					};
+				};
+			};
+			//2.打开连接
+			xhr.open('post','http://127.0.0.1:8080/pro/update',true);
+			//3.发送请求
+			//3.1创建请求主体
+			var formdata="uid="+uid.innerHTML+"&uname="+uname.value+"&upwd="+upwd.value+"&email="+email.value+"&phone="+phone.value+"&user_name="+user_name.value+"&gender="+u_gender;
+			//3.2修改请求消息头
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			//3.3发送
+			xhr.send(formdata);
+		}
+	</script>
+</body>
+</html>

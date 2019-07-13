@@ -1,0 +1,42 @@
+#d1 {
+  border: 521px solid #f10215;
+  width: 123px 1px solid #00f; }
+
+#d2:before {
+  content: "zi said";
+  border: 1px solid #00f; }
+
+#content {
+  background: #0000ff; }
+  #content div.top {
+    border: 1px solid #f00; }
+    #content div.top h1 {
+      color: #000; }
+    #content div.top p {
+      color: #0aa1ed; }
+  #content div.bottom {
+    border: 1px dotted #f00; }
+
+a {
+  width: 21px; }
+  a:hover {
+    width: 20px; }
+
+div {
+  border-width: 2px;
+  border-style: solid;
+  border-color: #000; }
+
+nav a, div a, header a, footer a {
+  width: 100px; }
+
+div#main {
+  width: 200px;
+  height: 200px;
+  background: #ff0000;
+  transition-property: all;
+  transition-duration: 2s;
+  transition-timing-function: linear; }
+  div#main:hover {
+    background: #ffc107;
+    border-radius: 50%; }

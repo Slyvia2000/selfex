@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>echarts</title>
+    <script src='../echarts.min.js'></script>
+</head>
+<body>
+    <div id="main" style='width:500px;height:400px'>
+    
+    </div>
+    <script>
+        // 1.获取显示图像容器
+        var main=document.getElementById('main');
+        // 2.创建mychart对象
+        var mychart=echarts.init(main);
+        // 3.创建配置项目
+        // 柱状统计图
+        var option={
+            title:{text:'echarts 入门示例'},//顶部标题
+            xAxis:{data:['衬衫','袜子','裤子','雪纺衫']},//x轴数据
+            yAxis:{},//y轴数据
+            series:[{type:'bar',data:[10,10,11,13]}]//数据源
+        };
+        // 4.将配置添加mychart
+        mychart.setOption(option);
+    </script>
+</body>
+</html>

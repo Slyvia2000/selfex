@@ -1,0 +1,52 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>动态创建表格</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; border-collapse:collapse;
+		text-align:center;
+	}
+	td,th{border:1px solid #ccc}
+</style>
+
+</head>
+<body>
+  <div id="data">
+    <table>
+      <thead>
+        <tr>
+          <th>ename</th>
+          <th>salary</th>
+          <th>age</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+  <script>
+	var json=[
+    {"ename":"Tom", "salary":11000, "age":25},
+    {"ename":"John", "salary":13000, "age":28},
+    {"ename":"Mary", "salary":12000, "age":25}
+  ];
+	/*动态创建表格*/
+  //var tbody=document.querySelector('#data>table>tbody');
+  // var tbody=document.createElement('tbody');
+  var frag=document.createDocumentFragment();
+  for(var emp of json){
+    // 创建tr元素
+    var tr=document.createElement('tr');
+    // 挂载tr元素
+    frag.appendChild(tr);
+    // 遍历emp创建td
+    for(var pname in emp){
+      var td=document.createElement('td');
+      tr.appendChild(td);
+      td.innerHTML=emp[pname];
+    };
+  };
+  document.querySelector('#data>table').appendChild(frag)
+  </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function fib(n){
+            if(n<3){
+                return 1;
+            }else{
+                var box1=1,box2=1,box3;
+                for(var i=3;i<=n;i++){
+                    box3=box1+box2;
+                    box1=box2;
+                    box2=box3;
+                };
+                return box3;
+            }
+        };
+        console.log(fib(7));
+    </script>
+</body>
+</html>

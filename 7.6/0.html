@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		lilei={
+			sname:'lilei',
+			sage:11,
+			intr:function(){
+			console.log(`i am ${this.sname},i am ${this.sage}`);
+			}
+		}
+		function Student(sname,sage){
+			this.sname=sname;
+			this.sage=sage;
+		};
+		Student.prototype.intr=function(){
+			console.log(`i am ${this.sname},i am ${this.sage}`);
+			};
+		var lilei2=new Student('lilei',11);
+		console.log(lilei2);
+		console.log(lilei2==lilei);
+		console.log(lilei2.__proto__==Student.prototype)
+
+	</script>
+</body>
+</html>

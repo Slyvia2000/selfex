@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{ text-align:center; }
+        canvas{ background-color:#fff; }
+    </style>
+</head>
+<body>
+    <canvas id="c3" width='500' height='400'></canvas>
+    <script>
+        var c3=document.getElementById('c3');
+        var ctx=c3.getContext('2d');
+        // 1.创建渐变对象
+        var g=ctx.createLinearGradient(0,0,500,0);
+        // 2.添加三个颜色点
+        g.addColorStop(0,'#f00');
+        g.addColorStop(0.5,'#0f0');
+        g.addColorStop(1,'#ff0');
+        // 3.将渐变对象赋值到填充样式
+        ctx.fillStyle=g;
+        // 4.将渐变对象赋值到填充样式
+        ctx.strokeStyle=g;
+        // 5.创建实心矩形
+        ctx.fillRect(0,0,500,100)
+        // 6.创建空心文字
+        ctx.font='39px SimHei'
+        ctx.strokeText('javascript',0,200)
+    </script>
+</body>
+</html>

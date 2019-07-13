@@ -1,0 +1,14 @@
+a {
+  display: block;
+  width: 8rem;
+  height: 2.5rem;
+  background: #0aa1ed;
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: center;
+  line-height: 2.5rem;
+  margin: 4px 10px;
+  text-decoration: none;
+  border-radius: 0.2rem; }
+  a:hover {
+    color: #ff0000; }

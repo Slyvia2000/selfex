@@ -1,0 +1,110 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>使用Selector API实现购物车客户端计算</title>
+<meta charset="utf-8" />
+<style>
+	table{width:600px; text-align:center;
+		border-collapse:collapse;
+	}
+	td,th{border:1px solid black}
+	td[colspan="3"]{text-align:right;}
+	tbody td:last-child{background:pink}
+	tfoot td:last-child{background:lightyellow}
+</style>
+
+</head>
+<body>
+	<table id="data">
+		<thead>
+			<tr>
+				<th>商品名称</th>
+				<th>单价</th>
+				<th>数量</th>
+				<th>小计</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td>iPhone6</td>
+				<td>￥4488.00</td>
+        <td>
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </td>
+				<td>￥4488.00</td>
+			</tr>
+			<tr>
+				<td>iPhone6 plus</td>
+				<td>￥5288.00</td>
+				<td>
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+				</td>
+				<td>￥5288.00</td>
+			</tr>
+			<tr>
+				<td>iPad Air 2</td>
+				<td>￥4288.00</td>
+        <td>
+          <button>-</button>
+          <span>1</span>
+          <button>+</button>
+        </td>
+				<td>￥4288.00</td>
+			</tr>
+		</tbody>
+		<tfoot>
+			<tr>
+				<td colspan="3">Total: </td>
+				<td>￥14064.00</td>
+			</tr>
+		</tfoot>
+	</table>
+  <script>
+			//1.找到触发事件的所有元素
+			var table=document.getElementById('data');
+			var btns=table.getElementsByTagName('button');
+			//2.绑定事件处理函数
+			for(var btn of btns){//遍历
+				btn.onclick=function(){//绑定
+					var btn=this;
+			//点击按钮改变数量
+					//3.找到要修改的元素
+					var span=btn.parentElement.children[1];
+					var n=parseInt(span.innerHTML);
+					//4.修改元素
+					if(btn.innerHTML=='+'){
+						n++;
+					}else if(n>1){
+						n--;
+					};
+					span.innerHTML=n;
+				
+				//点击按钮改变小计
+					//先获得btn的父元素td
+					var td=btn.parentElement;
+					//获得单价
+					var price=parseFloat(td.previousElementSibling.innerHTML.slice(1));
+					//小计=单价*数量n
+					var subTotal=price*n;
+					console.log(subTotal);
+					td.nextElementSibling.innerHTML=`￥${subTotal.toFixed(2)}`;
+				
+				//点击按钮改变总计
+					//找到td
+					var tds=table.querySelectorAll('tbody td:last-child');
+					//遍历
+					var total=0;
+					for(var td of tds){
+						total+=parseFloat(td.innerHTML.slice(1))
+					};
+					//将total放入结果
+					table.querySelector('tfoot td:last-child').innerHTML=`￥${total.toFixed(2)}`
+				};
+			};
+	</script>
+</body>
+</html>

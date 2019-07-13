@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>user_list</title>
+</head>
+<body onload="get_userlist()">
+	<table id="content" border="1px" width="400px">
+			<tr>
+				<th>uid</th>
+				<th>用户名</th>
+				<th>用户密码</th>
+				<th>邮箱</th>
+			</tr>
+	</table>
+	<script>
+		function get_userlist(){
+			//创建异步对象
+			var xhr=new XMLHttpRequest();
+			//监听
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					var arr=JSON.parse(result);
+					for(var i=0;i<arr.length;i++){
+						content.innerHTML+=`
+							<tr>
+								<td>${arr[i].uid}</td>
+								<td>${arr[i].uname}</td>
+								<td>${arr[i].upwd}</td>
+								<td>${arr[i].email}</td>
+							</tr>
+						`;
+					};
+				};
+			};
+			//打开连接
+			xhr.open('get','http://127.0.0.1:8080/ajax/userlist',true);
+			//发送请求
+			xhr.send();
+		};
+	</script>
+</body>
+</html>

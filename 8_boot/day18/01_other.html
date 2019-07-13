@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        .breadcrumb-item+.breadcrumb-item::before{
+            content: ">";
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>动画条纹进度条</h1>
+    <div class="progress">
+        <div class="progress-bar w-100 progress-bar-striped progress-bar-animated bg-warning"></div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>条纹进度条</h1>
+    <div class="progress">
+        <div class="progress-bar w-75 bg-success progress-bar-striped"></div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>普通进度条</h1>
+    <!-- 进度槽-->
+    <div class="progress bg-dark">
+        <!-- 进度条-->
+        <div class="progress-bar w-50 bg-danger"></div>
+    </div>
+    <br/>
+    <hr/>
+    <br/>
+    <h1>面包屑导航</h1>
+    <hr/>
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a href="#">首页</a></li>
+        <li class="breadcrumb-item"><a href="#">学习用品</a></li>
+        <li class="breadcrumb-item"><a href="#">笔记本电脑</a></li>
+        <li class="breadcrumb-item"><a href="#">ThinkPad470</a></li>
+    </ul>
+</div>
+</body>
+</html>

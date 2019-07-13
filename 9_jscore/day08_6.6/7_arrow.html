@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<script>
+var arr=[23,3,12,2,123,1];
+arr.sort((a,b)=>a-b);
+console.log(arr);
+
+var str="you can you up!";
+str=str.replace(
+  /\b[a-z]/ig,
+  keyword=>keyword.toUpperCase()
+)
+console.log(str);
+
+var arr=[1,2,3,4,5];
+arr.forEach((elem,i,arr)=>arr[i]*=2)
+console.log(arr);
+
+var arr=[1,2,3,4,5];
+var newArr=arr.filter(elem=>elem%2==0);
+console.log(newArr);
+
+(()=>console.log(`页面加载完成,at: ${new Date().toLocaleString()}`))();
+
+setInterval(()=>console.log(`I ❤ U`),1000);
+
+</script>
+</body>
+</html>

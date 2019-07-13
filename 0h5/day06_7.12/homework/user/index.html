@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #msg{
+      text-align: right;
+    }
+  </style>
+</head>
+<body>
+  <div id="msg">
+     <a href="login.html">请登录</a>
+  </div>
+  <script>
+   //1:判断条件
+   var n = sessionStorage.getItem("uname");
+   if(n){
+     //2:登录成功
+     var str = `欢迎回来 ${n} `;
+     str += `<a href="logout.html">退出</a>`;
+     //获取显示元素
+     var msg = document.getElementById("msg");
+     msg.innerHTML = str;
+   }
+
+
+  </script>
+</body>
+</html>

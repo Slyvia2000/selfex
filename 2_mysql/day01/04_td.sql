@@ -1,0 +1,16 @@
+DROP DATABASE IF EXISTS td;
+CREATE DATABASE td;
+USE td;
+CREATE TABLE emp(
+	eid INT,
+	ename VARCHAR(8),
+	addr VARCHAR(16),
+	phone VARCHAR(11)
+);
+INSERT INTO emp VALUES(
+	'1',
+	'one',
+	'124',
+	'12312345678'
+);
+SELECT * FROM emp;

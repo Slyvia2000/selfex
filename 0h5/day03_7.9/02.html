@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{text-align:center}
+        canvas{ background-color:lightcoral}
+    </style>
+</head>
+<body>
+    <canvas id='c3' width='800' height='800'></canvas>
+    <script>
+        var c3=document.getElementById('c3');
+        var ctx=c3.getContext('2d');
+        var deg;
+        var i=0;
+        
+        // 2.创建2个变量保存起始角度，结束角度
+        var start=-90;
+        var end=-90;
+        // 3.创建变量
+        var num=0;
+        // 4.创建定时器绘制进度条
+        var t=setInterval(function(){
+            // 清画布
+            ctx.clearRect(0,0,800,800);
+            // 1.灰色底框
+            ctx.beginPath();
+            ctx.strokeStyle='#666';
+            ctx.lineWidth=25;
+            ctx.arc(400,400,100,0,2*Math.PI);
+            ctx.stroke();
+            // 4.1修改结束角度
+            end+=3.6;
+            // 4.2开始新路径
+            ctx.beginPath();
+            // 4.3绘制圆环
+            ctx.arc(400,400,100,start*Math.PI/180,end*Math.PI/180);
+            ctx.strokeStyle='green';
+            ctx.stroke();
+            // 绘制文字
+            ctx.font='30px SimHei'
+            num++;
+            ctx.fillText(num+'%',370,420,);
+            if(num==100){clearInterval(t)};
+        },50)
+        
+        /*
+        var i=setInterval(function(){
+            var deg=(-90+i)*Math.PI/180;
+            ctx.beginPath();
+            ctx.arc(200,200,50,-90*Math.PI/180,deg);
+            i+=1;
+            ctx.strokeStyle='green';
+            ctx.stroke();
+        },20);
+        */
+    </script>
+</body>
+</html>

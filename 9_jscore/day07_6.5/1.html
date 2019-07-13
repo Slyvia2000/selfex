@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //使用严格模式
+        "use strict"
+        //创建对象
+        var eric={
+            eid:1001,
+            ename:'诶里克'
+        }
+        Object.defineProperties(eric,{
+                _age:{
+                    value:26,
+                    writable:true,
+                    enumerable:false,
+                    confinurable:false
+                },
+                age:{
+                    get:function(value){
+                        return this._age;
+                    },
+                    set:function(value){
+                        if(value>=18&&value<=65){
+                            this._age=value;
+                        }else{
+                            throw Error('年龄必须介于18-65之间')
+                        }
+                    },
+                enumerable:true,
+                configurable:false
+                }
+            }
+        );
+        //密封
+        Object.seal(eric);
+        //禁止添加新属性：
+        //Object.preventExtensions(eric);
+        //eric.age=-2;
+        //尝试添加新属性
+        //eric.Age=-2;
+        //尝试删除属性
+        delete eric.age;
+        //输出结果
+        console.log(eric);
+    </script>
+</body>
+</html>

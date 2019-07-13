@@ -1,0 +1,102 @@
+<!doctype html>
+<html>
+ <head>
+	<meta charset="UTF-8">
+	<title>实现带样式的表单验证</title>
+	<link rel="Stylesheet" href="css/1.css" />
+ </head>
+ <body>
+	<form id="form1">
+		<h2>增加管理员</h2>
+		<table>
+			<tr>
+				<td>姓名：</td>
+        <td>
+					<input name="username"/>
+					<span>*</span>
+				</td>
+				<td>
+<!--开始默认.vali_info 隐身斗篷
+	文本框获得焦点时，清空div class
+	文本框失去焦点时，验证文本框的内容
+		//如果验证通过，就将div的class还成
+					.vali_success 验证通过
+		//否则，就将div的class换成
+				  .vali_fail    验证失败-->
+					<div class="vali_info">
+						10个字符以内的字母、数字或下划线的组合
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td>密码：</td>
+				<td>
+					<input type="password" name="pwd"/>
+					<span>*</span>
+				</td>
+				<td>
+					<div class="vali_info">6位数字</div>
+				</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td colspan="2">
+          <input type="submit" value="保存"/>
+          <input type="reset" value="重填"/>
+				</td>
+			</tr>				
+	    </table>
+	</form>
+<script>
+//DOM 4步:
+//1. 查找触发事件的元素
+//查找name属性为username的姓名文本框
+var txtName=
+ document.getElementsByName("username")[0]
+//查找name属性为pwd的密码框
+var txtPwd=
+	document.getElementsByName("pwd")[0];
+console.log(txtPwd);
+//2. 绑定事件处理函数
+//姓名文本框和密码框 当获得焦点(时),都自动执行相同的函数
+txtPwd.onfocus=txtName.onfocus=function(){
+	//3. 查找要修改的元素
+	//查找当前文本框的父级td的下一个兄弟中的唯一的孩子
+	var div=this.parentNode
+							.nextElementSibling
+							.children[0];
+	//4. 修改元素
+	//清除div上的class,让div显示出来
+	div.className="";
+}
+
+//姓名文本框 当失去焦点(时),自动执行该函数
+txtName.onblur=function(){
+	//this->txtName
+	//都请公共的vali函数帮忙
+	vali(this,/^\w{1,10}$/);
+}
+//密码框 当失去焦点(时)，自动执行该函数
+txtPwd.onblur=function(){
+	//this->txtPwd
+	//都请公共的vali函数帮忙
+	vali(this,/^\d{6}$/);
+}
+//因为姓名的验证流程和密码框的验证流程，绝大部分代码是重复的，所以，定义为一个独立的函数，共用。函数中，两个文本框不同的地方，定义为形参，调用时，缺什么，就传入什么。
+function vali(txt,reg){
+	//3. 查找要修改的元素
+	//查找当前文本框的父级td的下一个兄弟中的唯一的孩子
+	var div=txt.parentNode
+							.nextElementSibling
+							.children[0];
+	//4. 修改元素
+	//如果验证当前txt的内容通过
+	if(reg.test(txt.value)==true){
+		div.className="vali_success";
+	}else{//否则
+		div.className="vali_fail";
+	}
+}
+</script>
+ </body>
+</html>

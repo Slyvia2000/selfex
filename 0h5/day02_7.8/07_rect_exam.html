@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{ text-align:center}
+        canvas{ background-color:#ccc;}
+    </style>
+</head>
+<body>
+    <canvas id='c3' width='500' height='400'></canvas>
+    <script>
+        var c3=document.getElementById('c3');
+        var ctx=c3.getContext('2d');
+        // 销售数据
+        var list=[
+            {name:'北京',sal:290},
+            {name:'天津',sal:210},
+            {name:'石家庄',sal:190},
+            {name:'保定',sal:210}
+        ];
+        var colors = ['#c23531','#2f4554', '#61a0a8', '#d48265', '#91c7ae','#749f83',  '#ca8622', '#bda29a','#6e7074', '#546570', '#c4ccd3'];
+        //ctx.fillStyle='#333';
+        for(var i=0;i<list.length;i++){
+            var w=50;
+            var h=list[i].sal;
+            var x=i*100+50;
+            var y=400-h;
+            ctx.fillStyle=colors[i];
+            ctx.fillRect(x,y,w,h);
+            // 分公司名字
+            var str=list[i].name;
+            // 当前文字位置
+            var sx=x;
+            var sy=y-20;
+            ctx.font='20px SimHei';
+            ctx.fillStyle='#000';
+            ctx.fillText(str,sx,sy);
+        }
+        // 创建函数：返回一个随机颜色
+        /*
+        function rc(){
+            var r=Math.floor(Math.random()*255);
+            var g=Math.floor(Math.random()*255);
+            var b=Math.floor(Math.random()*255);
+            return `rgb(${r},${g},${b})`;
+        }
+        */
+        // 绘制文字
+    </script>
+</body>
+</html>

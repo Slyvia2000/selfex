@@ -1,0 +1,136 @@
+/*手写媒体查询，控制iframe的宽高*/
+.my_header,.my_footer{width: 100%;}
+@media screen and (min-width: 992px){
+    .my_header{height: 8rem;}
+    .my_footer{height:16rem }
+}
+@media screen and (max-width: 991px){
+    .my_header{height: 12rem;}
+    .my_footer{height: 30rem;}
+}
+/*轮播图左右箭头样式重写*/
+.carousel-control-prev,
+.carousel-control-next{
+    width: 4%;height: 20%;
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 0.25rem;
+    top: 40%;
+}
+/*轮播图指示器样式重写*/
+.carousel-indicators li{
+    width:0.75rem;height: 0.75rem;
+    background-color: #ffffff;
+    border-radius: 50%;
+    margin: 0 6px;
+}
+.carousel-indicators li:hover{
+    cursor: pointer;
+}
+.carousel-indicators .active{
+    background-color: #0aa1ed;
+}
+/*1F样式*/
+.top_h{height: 377px;}
+.bottom_h{height: 235px;}
+.bg_1{background-color: #e8e8e8;}
+/*第一格样式*/
+.card{background-color: transparent;}
+/*过渡*/
+.my_img_position{
+    transition: transform 1s;
+}
+.my_img_position:hover{
+    transform: scale(1.1);
+}
+/*图1大屏*/
+@media screen and (min-width: 992px) {
+    .my_img_position1{
+        margin-top: -160px;
+        margin-right: 48px;
+    }
+}
+/*图1中屏*/
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .my_img_position1{
+        margin-top: -150px;
+        margin-right: 70px;
+        width: 20rem;
+    }
+}
+/*图1小屏*/
+@media screen and (max-width: 767px) {
+    .my_img_position1{
+        margin-top: -190px;
+        margin-right: 30px;
+    }
+}
+
+/*图2大屏*/
+@media screen and (min-width: 992px) {
+    .my_img_position2{
+        margin-top: -160px;
+        margin-right: 48px;
+    }
+}
+/*图2中屏*/
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .my_img_position2{
+        margin-top: -150px;
+        margin-right: 70px;
+        width: 20rem;
+    }
+}
+/*图2小屏*/
+@media screen and (max-width: 767px) {
+    .my_img_position2{
+        margin-top: -155px;
+        margin-right: 30px;
+    }
+}
+
+/*图3大屏*/
+@media screen and (min-width: 992px) {
+    .my_img_position3{
+        margin-top: -150px;
+        margin-right: -9px;
+    }
+}
+/*图3中屏*/
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .my_img_position3{
+        margin-top: -150px;
+        margin-right: 70px;
+        width: 20rem;
+    }
+}
+/*图3小屏*/
+@media screen and (max-width: 767px) {
+    .my_img_position3{
+        margin-top: -112px;
+        margin-right: 30px;
+    }
+}
+
+/*图4大屏*/
+@media screen and (min-width: 992px) {
+    .my_img_position4{
+        margin-top: 0px;
+        margin-right: 6px;
+    }
+}
+/*图4中屏*/
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .my_img_position4{
+        margin-top: -0px;
+        margin-right: 220px;
+        width: 12rem;
+    }
+}
+/*图4小屏*/
+@media screen and (max-width: 767px) {
+    .my_img_position4{
+        margin-top: 0px;
+        margin-right:154px;
+    }
+}
+

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <style>
+        div{border: 2px solid #f00;}
+        .container div{border: 1px solid #000;}
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- 列偏移-->
+    <div class="row">
+        <div class="col-3 offset-lg-6">col-3</div>
+    </div>
+    <!-- 使用col不带数字-->
+    <div class="row">
+        <div class="col">1</div>
+        <div class="col">2</div>
+        <div class="col">3</div>
+        <div class="col">4</div>
+        <div class="col">5</div>
+        <div class="col">6</div>
+        <div class="col">7</div>
+        <div class="col">8</div>
+        <div class="col">9</div>
+        <div class="col">10</div>
+        <div class="col">11</div>
+        <div class="col">12</div>
+    </div>
+    <!-- boot响应式范围-->
+    <div class="row">
+        <div class="col-sm-3">小屏col-sm-3</div>
+    </div>
+    <div class="row">
+        <div class="col-md-3">中屏col-md-3</div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3">大屏col-lg-3</div>
+    </div>
+    <!-- 响应式栅格布局-->
+    <!-- 栅格布局-->
+    <!-- 一行1:1:1-->
+    <div class="row">
+        <div class="col-4">4份</div>
+        <div class="col-4">4份</div>
+        <div class="col-4">4份</div>
+    </div>
+    <div class="row">
+        <div class="col-3">3份</div>
+        <div class="col-3">3份</div>
+        <div class="col-3">3份</div>
+        <div class="col-3">3份</div>
+    </div>
+    <div class="row">
+        <div class="col-3">3份</div>
+        <div class="col-6">6份</div>
+        <div class="col-3">3份</div>
+    </div>
+    <!-- 1:2:1:2-->
+    <div class="row">
+        <div class="col-2">2份</div>
+        <div class="col-4">4份</div>
+        <div class="col-2">2份</div>
+        <div class="col-4">4份</div>
+    </div>
+    <!-- 1:4:1-->
+    <div class="row">
+        <div class="col-2">2份</div>
+        <div class="col-8">8份</div>
+        <div class="col-2">2份</div>
+    </div>
+</div>
+</body>
+</html>

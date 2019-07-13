@@ -1,0 +1,47 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+<title>读取并修改元素的属性</title>
+<meta charset="utf-8" />
+<link rel="stylesheet" href="css/3.css" />
+<style></style>
+
+</head>
+<body>
+	<h2>实现多标签页效果</h2>
+  <div class="tabs">
+    <ul id="tab">
+      <li><a href="javascript:;" data-toggle="tab" data-id="content1">10元套餐</a></li>
+      <li><a href="javascript:;" data-toggle="tab" data-id="content2">30元套餐</a></li>
+      <li><a href="javascript:;" data-toggle="tab" data-id="content3">50元包月</a></li>
+    </ul>
+    <div id="container">
+      <div id="content1">
+        10元套餐详情：<br />&nbsp;每月套餐内拨打100分钟，超出部分2毛/分钟
+      </div>
+      <div id="content2">
+        30元套餐详情：<br />&nbsp;每月套餐内拨打300分钟，超出部分1.5毛/分钟
+      </div>
+      <div id="content3">
+        50元包月详情：<br />&nbsp;每月无限量随心打
+      </div>
+    </div>
+  </div>
+  <script>
+    // 1.查找触发事件的元素
+    // 2.绑定处理函数
+      // 3.查找要修改的元素
+      // 4.修改元素
+    var as=document.querySelectorAll('#tab>li [data-toggle="tab"]');
+    var i=1;
+    for(var a of as){
+      a.onclick=function(){
+        var id=this.getAttribute('data-id');
+        var div=document.getElementById(id);
+        div.style.zIndex=i;
+        i++;
+      };
+    };
+  </script>
+</body>
+</html>

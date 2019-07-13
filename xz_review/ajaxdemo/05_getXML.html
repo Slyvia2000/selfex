@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body onload="getxml()">
+	<script>
+		function getxml(){
+			var xhr=new XMLHttpRequest();
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseXML;
+					var studentlist=result.getElementsByTagName('studentlist')[0];
+					var student=studentlist.getElementsByTagName('student')[0];
+					var name=student.getElementsByTagName('name')[0];
+					console.log(name.innerHTML);
+				};
+			};
+			xhr.open('get','http://127.0.0.1:8080/students.xml',true);
+			xhr.send();
+		};
+	</script>
+</body>
+</html>

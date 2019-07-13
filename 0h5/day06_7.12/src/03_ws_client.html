@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <button id='btn1' onclick='handle1()'>创建连接</button>
+    <button id='btn2' onclick='handle2()'>发送数据</button>
+    <button id='btn3' onclick='handle3()'>关闭连接</button>
+    <script>
+        // 创建变量保存websocket对象
+        var c=null;
+        function handle1(){
+            // 1.创建连接
+            var url='ws://127.0.0.1:9001';
+            c=new WebSocket(url);
+            // 2.接收数据
+            c.onmessage=function(e){
+                console.log(e.data);
+            }
+        };
+        function handle2(){
+            // 向服务器发送数据
+            c.send(new Date());
+        };
+        function handle3(){
+            // 关闭与服务器连接
+            c.close();
+        };
+    </script>
+</body>
+</html>

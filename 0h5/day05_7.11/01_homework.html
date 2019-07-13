@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='../echarts.js'></script>
+</head>
+<body>
+    <div id="main" style="width:500px;height:400px;border:1px solid #f00"></div>
+    <div id="box" style="width:500px;height:400px;border:1px solid #00f"></div>
+    <script>
+        var main=document.getElementById('main');
+        var mychart=echarts.init(main);
+        var option={
+            title:{text:'饼状统计图'},
+            series:[{
+                type:'pie',
+                radius:'50%',
+                center:['50%','50%'],
+                itemStyle:{
+                    normal:{color:'#c23531'},
+                    shadowBlur:200,
+                    shadowColor:'rgba(0,0,0,0.5)'
+                    },
+                data:[
+                    {value:100,name:'js'},
+                    {value:99,name:'php'},
+                    {value:101,name:'java'}
+                    ]
+            }]
+        }
+        console.log(option)
+        mychart.setOption(option);
+
+        // 仪表盘gauge
+        var box=document.getElementById('box');
+        var boxchart=echarts.init(box);
+        var boxoption={
+            series:[
+                {
+                    name:'业务指标',
+                    type:'gauge',
+                    detail:{formatter:'{value}%'},
+                    data:[{value:35,name:'完成率'}]
+                }
+            ]
+        };
+        boxchart.setOption(boxoption);
+    </script>
+</body>
+</html>

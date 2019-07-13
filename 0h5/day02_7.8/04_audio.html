@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <audio src="../../res/bg.mp3" id='a3'></audio>
+    <form action="">
+        是否播放背景音乐
+        <input type="checkbox" id='cb'>
+    </form>
+    <script>
+        var a3=document.getElementById('a3');
+        var cb=document.getElementById('cb');
+        cb.onchange=function(){
+            if(this.checked){
+                a3.play();
+            }else{
+                a3.pause();
+            }
+        }
+    </script>
+</body>
+</html>

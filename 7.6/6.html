@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var eric={
+            eid:1001,
+            ename:'eric',
+        };
+        // 给Eric对象添加两个属性
+        Object.defineProperties(eric,{
+            // 先添加一个半隐藏的_age
+            _age:{
+                value:26,
+                writable:true,
+                enumerable:false,
+                configurable:false
+            },
+            // 再为_age添加访问器属性
+            age:{
+                get:function(){ return this._age},
+                set:function(value){
+                    if(value>=18&&value<=65){
+                        this._age=value;
+                    }else{
+                        throw Error('年龄不合法')
+                    }
+                },
+                enumerable:true,
+                configurable:false
+            }
+        });
+        console.log(eric);
+    </script>
+</body>
+</html>

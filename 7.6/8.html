@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calc(base,bonus1,bonus2){
+            console.log(`总工资是${base+bonus1+bonus2},${this.ename}的`)
+        };
+        var lilei={ ename:'lilei' };
+        var hmm={ ename:'hmm' };
+        calc.call(lilei,10000,1000,2000);
+        calc.call(hmm,10000,1000,4000);
+    </script>
+</body>
+</html>

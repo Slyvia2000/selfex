@@ -1,0 +1,42 @@
+﻿<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>遍历节点树</title>
+		<meta charset="utf-8"/>
+	</head>
+	<body>
+		<span>{{uname}}</span>
+		<ul id="nav">
+			<li>电影</li>
+			<li>综艺
+				<ul>
+					<li>{{title}}</li>
+					<li>爸爸</li>
+					<li>极限</li>
+				</ul>
+			</li>
+			<li>{{title}}</li>
+		</ul>	
+    <script>
+		var uname='dingding';
+		var title='极限挑战';
+		function fun(parent){
+			//仅获得直接子元素
+			var children=parent.children;
+			//遍历每个直接子元素的内容
+			for(var i=0;i<children.length;i++){
+				var elem=children[i];
+				if(elem.innerHTML=='{{uname}}'){
+					elem.innerHTML=uname;
+				}else if(elem.innerHTML=='{{title}}'){
+					elem.innerHTML=title;
+				};
+				//对每个子元素调用和父元素完全相同的操作
+				fun(elem);
+			};
+		};
+		//遍历body下的所有后代元素并替换内容
+		fun(document.body);
+	</script>
+	</body>
+</html>

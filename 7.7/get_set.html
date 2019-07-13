@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var eric={
+            eid:1001,
+            ename:'eric',
+        };
+        Object.defineProperties(eric,{
+            gage:{
+                value:26,
+                writable:true,
+                enumerable:false,
+                configurable:false
+            },
+            age:{
+                get:function(){
+                    return this.gage;
+                },
+                set:function(value){
+                    if(value>=18&&value<=65){
+                        this.gage=value;
+                    }else{
+                        throw Error('年龄不合法')
+                    }
+                },
+                enumerable:true,
+                configurable:false
+            },
+        });
+        console.log(eric.age)
+        eric.age=33;
+        console.log(eric.age)
+        console.log(eric)
+    </script>
+</body>
+</html>

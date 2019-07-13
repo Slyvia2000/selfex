@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>选项卡导航</h1>
+    <!--选项 -->
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="#tab1" class="nav-link" data-toggle="tab">东北菜</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab2" class="nav-link" data-toggle="tab">四川菜</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab3" class="nav-link" data-toggle="tab">云南菜</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab4" class="nav-link" data-toggle="tab">广东菜</a>
+        </li>
+    </ul>
+    <!--内容 -->
+    <div class="tab-content">
+        <div class="tab-pane" id="tab1">乱炖 lorem</div>
+        <div class="tab-pane" id="tab2">辣子鸡 lorem</div>
+        <div class="tab-pane" id="tab3">汽锅鸡 lorem</div>
+        <div class="tab-pane" id="tab4">煲仔饭 lorem</div>
+    </div>
+
+    <h1>水平导航</h1>
+    <ul class="nav nav-justified bg-dark">
+        <li class="nav-item"><a href="#" class="nav-link text-light">秒杀</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">优惠券</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">plus会员</a></li>
+        <li class="nav-item"><a href="#" class="nav-link text-light">闪购</a></li>
+    </ul>
+    <h1>信息提示框</h1>
+    <div class="alert alert-danger alert-dismissible">
+        <span class="close" data-dismiss="alert">&times;</span>
+        检查肚子
+    </div>
+    <h1>按钮组</h1>
+    <div class="btn-group btn-group-sm">
+        <a class="btn btn-danger" href="#">蘑菇</a>
+        <a class="btn btn-warning" href="#">排骨</a>
+        <a class="btn btn-info" href="#">大鹅</a>
+        <a class="btn btn-success" href="#">牛腩</a>
+    </div>
+    <h1>下拉菜单</h1>
+    <div class="dropdown"><!--class="dropdown" 父级，相对定位 -->
+        <button class="btn btn-danger dropdown-toggle" data-toggle="dropdown">下拉菜单</button>
+        <!--class="dropdown-toggle" 画向下小三角 -->
+        <!--data-toggle="dropdown" 通过自定义属性data-toggle来激活事件dropdown（即下拉菜单事件）-->
+        <ul class="dropdown-menu"><!-- class="dropdown-menu" display:none-->
+            <li><a href="">鱼香肉丝</a></li>
+            <li><a href="">鱼香肉丝</a></li>
+            <li><a href="">鱼香肉丝</a></li>
+            <li><a href="">鱼香肉丝</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

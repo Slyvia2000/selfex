@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<form action="">
+		<fieldset>
+			<legend>用户基本信息</legend>
+			用户名称：
+			<input type="text"><br>
+			用户密码：
+			<input type="password"><br>
+			用户性别：
+			<input type="radio" name="gender" id="male" checked>
+			<label for="male">男</label>
+			<input type="radio" name="gender" id="female">
+			<label for="female">女</label>
+		</fieldset>
+		<table>
+			<tr>
+				<td>用户爱好</td>
+				<td>
+					<input type="checkbox" name="hobby" id="eat">
+					<label for="eat">吃</label>
+					<input type="checkbox" name="hobby" id="drink">
+					<label for="drink">喝</label>
+					<input type="checkbox" name="hobby" id="play">
+					<label for="play">玩</label>
+					<input type="checkbox" name="hobby" id="happy">
+					<label for="happy">乐</label>
+				</td>
+			</tr>
+			<tr>
+				<td>选择头像</td>
+				<td>
+					<input type="file">
+				</td>
+			</tr>
+			<tr>
+				<td>自我介绍：</td>
+				<td>
+					<textarea name="" id="" cols="30" rows="10"></textarea>
+				</td>
+			</tr>
+			<tr>
+				<td valign="bottom">工作城市：</td>
+				<td>
+					<select name="city" id="" size="3">
+						<option value="bj">北京</option>
+						<option value="sh">上海</option>
+						<option value="sz">深圳</option>
+						<option value="gz">广州</option>
+					</select>
+				</td>
+			</tr>
+			<tr>
+				<td colspan="2">
+					<input type="submit">
+					<input type="reset">
+					<input type="button" value="普通按钮">
+				</td>
+			</tr>
+		</table>
+	</form>
+</body>
+</html>

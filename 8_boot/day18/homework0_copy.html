@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <!-- 设置视口-->
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <!-- 导入css-->
+    <link rel="stylesheet" href="../css/bootstrap.css"/>
+    <!-- 导入3个js-->
+    <script src="../js/jquery.min.js"></script>
+    <script src="../js/popper.min.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h1>手风琴</h1>
+    <hr/>
+    <div id="parent">
+        <!-- 第一张卡片-->
+        <div class="card">
+            <!-- 显示部分-->
+            <div class="card-header">
+                <a href="#one" class="card-link" data-toggle="collapse">选项一</a>
+            </div>
+            <!-- 隐藏部分-->
+            <div id="one" class="collapse" data-parent="#parent">
+                <div class="card-body">技术</div>
+            </div>
+        </div>
+        <!-- 第二张卡片-->
+        <div class="card">
+            <!-- 显示部分-->
+            <div class="card-header">
+                <a href="#two" class="card-link" data-toggle="collapse">选项二</a>
+            </div>
+            <!-- 隐藏部分-->
+            <div id="two" class="collapse" data-parent="#parent">
+                <div class="card-body">梦想</div>
+            </div>
+        </div>
+        <!-- 第三张卡片-->
+        <div class="card">
+            <!-- 显示部分-->
+            <div class="card-header">
+                <a href="#three" class="card-link" data-toggle="collapse">选项三</a>
+            </div>
+            <!-- 隐藏部分-->
+            <div id="three" class="collapse" data-parent="#parent">
+                <div class="card-body">技术和梦想</div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

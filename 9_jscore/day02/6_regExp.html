@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var msg=prompt('请输入')
+        var arr=[11,22,99];
+        var str=arr.join('|');
+        //console.log(str);
+        var reg=new RegExp(str);
+        var i=msg.search(reg);
+        if(i!=-1){
+            document.write(`<h1 style='color:red'>包含敏感词</h1>`);
+            }else{
+                document.write(`<h1 style='color:green'>您输入的值为${msg}</h1>`)
+            }
+    </script>
+</body>
+</html>

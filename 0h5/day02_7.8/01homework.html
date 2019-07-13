@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background:#fff;
+            text-align:center;
+        }
+        /* 最外层父元素 */
+        .container{
+            position:relative;
+        }
+        #ctrl{
+            position:absolute;
+            left:50%;top:50%;
+            margin-top:-60px;margin-left:-60px;
+        }
+        #ctrl img{
+            width:120px;height:120px;
+        }
+        #p3{
+            position:absolute;
+            width:300px;height:200px;
+            left:50%;top:50%;
+            margin-top:-100px;margin-left:-150px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 1.视频 -->
+        <video src="../../res/x.mp4" id='v3'></video>
+        <!-- 2.广告图片 -->
+        <img src="../../res/p3.png" id='p3'>
+        <!-- 3.按钮 -->
+        <a href="#" id='ctrl' ><img src="../../res/play.png"0></a>
+    </div>
+    <script>
+        // 1.点击图片切换播放和暂停效果
+        // 2.点击图片切换图片效果
+        var ctrl=document.getElementById('ctrl');
+        var v3=document.getElementById('v3');
+        var img=document.querySelector('#ctrl img');
+        var p3=document.getElementById('p3');
+        ctrl.onclick=function(e){
+            e.preventDefault();
+            if(v3.paused){
+                img.src='../../res/pause.png';
+                v3.play();
+                p3.style.display='none'
+            }else{
+                img.src='../../res/play.png';
+                v3.pause();
+                p3.style.display='block';
+            }
+        };
+        // 3.鼠标移入移出
+        var container=document.querySelector('.container');
+        container.onmouseenter=function(){
+            ctrl.style.display='block';
+        };
+        container.onmouseleave=function(){
+            ctrl.style.display='none';
+        };
+        // 4.广告显示与隐藏
+        var p3=document.getElementById('p3')
+    </script>
+</body>
+</html>

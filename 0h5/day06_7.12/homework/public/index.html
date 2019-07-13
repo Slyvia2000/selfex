@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <script src='echarts.js'></script>
+</head>
+<body>
+    <div id="main" style="width:1000px;height:800px;border:1px solid red;"></div>
+    <script>
+        var main=document.getElementById('main');
+        var mycharts=echarts.init(main);
+        // 1.原生ajax请求
+        // 2.创建ajax对象
+        var xhr=new XMLHttpRequest();
+        // 3.绑定状态修改事件
+        xhr.onreadystatechange=function(){
+            // 3.1接收服务器返回数据
+            if(xhr.readyState==4&&xhr.status==200){
+                console.log(xhr.responseText);
+                var obj=JSON.parse(xhr.responseText);
+                var mlist=[];//月份
+                var slist=[];//销售额
+                for(var item of obj.data){
+                    mlist.push(item.m);
+                    slist.push(item.sal);
+                }
+                // 3.创建option对象
+                var option={
+                    title:{text:'销售统计图'},
+                    xAxis:{data:mlist},
+                    yAxis:{},
+                    series:[{type:'bar',data:slist}]
+                }
+                // 4.将option添加mycharts
+                mycharts.setOption(option);
+            };
+        };
+        // 4.打开连接
+        var url='http://127.0.0.1:3000/sal';
+        xhr.open('GET',url,true)
+        // 5.发送请求
+        xhr.send(null);
+    </script>
+</body>
+</html>

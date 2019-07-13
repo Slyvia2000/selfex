@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+<script>
+	function parent(){
+		var total=1000;
+		return function(money){
+			total-=money;
+			console.log(`花了${money}，还剩${total}`);
+		};
+	};
+
+	var child=parent();
+	child(100);
+	child(100);
+</script>
+</body>
+</html>

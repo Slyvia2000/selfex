@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>homework</title>
+	<style>
+		*{
+			margin:0;padding:0;
+			font-family:"simhei", Arial, Helvetica, sans-serif;
+			}
+		#container{
+			width:1000px;
+			margin:10px auto;
+			display:flex;
+			flex-flow:row wrap;
+			justify-content:space-between;
+			}
+		#container>div{
+			background:#e8e8e8;
+			position:relative;
+			}
+		#container>div:nth-child(1){
+			width:609px;height:377px;
+			margin-bottom:10px;
+			}
+		#container>div:nth-child(2){
+			width:381px;height:377px;
+			}
+		#container>div:nth-child(3){
+			width:377px;height:233px;
+			}
+		#container>div:nth-child(4),
+		#container>div:nth-child(5),
+		#container>div:nth-child(6){
+			width:189px;height:235px;
+			text-align:center;
+			}
+		#container>div>div>p.title{
+			font-size:32px;
+			color:#333;
+			}
+		#container>div>div>p.detail{
+			font-size:12px;
+			color:#666;
+			}
+		#container>div p.price{
+			font-size:24px;
+			color:#0aa1ed;
+			margin:0px 0px 0px 0px;
+			}
+		#container>div:nth-child(3)>p.price{
+			font-size:22px;
+			}
+		#container>div:nth-child(4)>p.price,
+		#container>div:nth-child(5)>p.price,
+		#container>div:nth-child(6)>p.price{
+			font-weight:bold;
+			}
+		#container>div>.title2{
+			font-size:12px;
+			color:#333;
+			}
+		#container>div a.view{
+			margin:10px 0px 0px 0px;
+			}
+		#container>div:nth-child(1) a.view,
+		#container>div:nth-child(2) a.view,
+		#container>div:nth-child(3) a.view{
+			display:inline-block;
+			width:130px;height:40px;
+			background:linear-gradient(to bottom,#27b1f6 0%, #0aa1ed 100%);
+			text-align:center;
+			line-height:40px;
+			text-decoration:none;
+			font-size:16px;
+			color:#fff;
+			}
+		#container>div:nth-child(4) a.view,
+		#container>div:nth-child(5) a.view,
+		#container>div:nth-child(6) a.view{
+			display:inline-block;
+			width:102px;height:28px;
+			background:linear-gradient(to bottom,#27b1f6 0%, #0aa1ed 100%);
+			text-align:center;
+			line-height:28px;
+			text-decoration:none;
+			font-size:16px;
+			color:#fff;
+			}
+		#container>div:nth-child(3)>div>p.title1{
+			font-size:22px;
+			color:#333;
+			}
+		#container>div:nth-child(1)>div{
+			width:245px;height:243px;
+			position:absolute;
+			top:55px;
+			left:65px;
+			}
+		#container>div:nth-child(2)>div{
+			width:253px;height:221px;
+			position:absolute;
+			top:63px;
+			left:24px;
+			}
+		#container>div:nth-child(3)>div{
+			width:149px;height:221px;
+			position:absolute;
+			top:21px;
+			left:33px;
+			}
+		#container>div:nth-child(1)>img{
+			position:absolute;
+			top:56px;
+			right:30px;
+			}
+		#container>div:nth-child(2)>img{
+			position:absolute;
+			bottom:16px;
+			right:25px;
+			}
+		#container>div:nth-child(3)>img{
+			position:absolute;
+			top:40px;
+			right:17px;
+			}
+	</style>
+</head>
+<body>
+	<div id="container">
+		<!-- 第一模块 -->
+			<div>
+				<div>
+					<p class="title">Apple MacBook Air系列</p>
+					<p class="detail">酷睿双核i5处理器|256GB SSD|8GB内存|英特尔HD显卡620含共享显卡内容</p>
+					<p class="price">￥6988.00</p>
+					<a class="view" href="#">查看详情</a>
+				</div>
+				<img src="study_computer_img1.png">
+			</div>
+		<!-- 第二模块 -->
+			<div>
+				<div>
+					<p class="title">小米Air 金属超轻薄</p>
+					<p class="detail">酷睿双核i5处理器|512GB SSD|2GB内存|英特尔HD独立显卡</p>
+					<p class="price">￥3488.00</p>
+					<a class="view" href="#">查看详情</a>
+				</div>
+				<img src="study_computer_img2.png">
+			</div>
+		<!-- 第三模块 -->
+			<div>
+				<div>
+					<p class="title1">联想E480C 轻薄系列</p>
+					<p class="price">￥5399.00</p>
+					<a class="view" href="#">查看详情</a>
+				</div>
+				<img src="study_computer_img3.png">
+			</div>
+		<!-- 第四模块 -->
+			<div>
+				<img src="study_computer_img4.png">
+				<p class="title2">华硕RX310 金属超极本</p>
+				<p class="price">￥5399.00</p>
+				<a class="view" href="#">查看详情</a>
+			</div>
+		<!-- 第五模块 -->
+			<div>
+				<img src="study_computer_img5.png">
+				<p class="title2">联想小新700 电竞版游戏本</p>
+				<p class="price">￥5399.00</p>
+				<a class="view" href="#">查看详情</a>
+			</div>
+		<!-- 第六模块 -->
+			<div>
+				<img src="study_computer_img3.png">
+				<p class="title2">戴尔灵越燃7000 轻薄窄边</p>
+				<p class="price">￥5399.00</p>
+				<a class="view" href="#">查看详情</a>
+			</div>
+	</div>
+</body>
+</html>

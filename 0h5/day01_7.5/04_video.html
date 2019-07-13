@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h3>播放视频</h3>
+    <!-- 屏幕宽高度与录制相关 -->
+    <video id='v3' src="../../res/x.mp4"></video>
+    <button onclick='vplay()' >播放</button>
+    <button onclick='vpause()'>暂停</button>
+    <button onclick='vplay2()'>快放</button>
+    <button onclick='vplay3()'>慢播</button>
+    <button onclick='vplay4()'>播放/暂停</button>
+    <script>
+        function vplay(){
+            var v3=document.getElementById('v3');
+            v3.play();
+        };
+        function vpause(){
+            var v3=document.getElementById('v3');
+            v3.pause();
+        };
+        function vplay2(){
+            var v3=document.getElementById('v3');
+            v3.playbackRate=5;
+            v3.play();
+        };
+        function vplay3(){
+            var v3=document.getElementById('v3');
+            v3.playbackRate=0.3;
+            v3.play();
+        };
+        function vplay4(){
+            var v3=document.getElementById('v3');
+            if(v3.paused){
+                v3.play();
+            }else{
+                v3.pause();
+            }
+        }
+    </script>
+</body>
+</html>

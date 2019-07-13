@@ -1,0 +1,102 @@
+$type:moon;
+div{
+  @if($type==sum){
+    color: #ff0000;
+  }@else if($type==moon){
+    color: #00f;
+  }@else {
+    color: #000;
+  }
+}
+
+
+
+@function get-width($n){
+  $a:60px;
+  $b:70px;
+  @return $n*max($a,$b)+$n*min($a,$b);
+}
+div{
+  width: get-width(2);
+}
+
+
+
+@function get_msg($a,$b){
+  @return $a*$b+($a/$b);
+}
+div{
+  width: get_msg(3,2);
+}
+
+
+@mixin my_bg($to){
+  background: -webkit-linear-gradient($to,#f00,#00f);
+}
+$my_to:"bottom";
+div{
+  @include my_bg(quote($my_to))
+}
+
+
+#demo{
+  width:200px;height: 200px;
+  background: hsl(60,50%,50%);
+}
+
+$my-width:5%;
+$my-max-width:$my-width*2;
+$other-width:$my-width+$my-max-width;
+#d1{}
+
+
+
+.my-border{
+  border:1px solid transparent;
+  width: 400px;
+  margin-left: 20px;
+}
+.my-bottom-border{
+  @extend .my-border;
+  border-bottom-color: #ff0000;
+  &:hover{
+    border-bottom-color: #0000ff;
+  }
+}
+
+
+
+.my1{
+  width:100px;height: 100px;
+}
+.my2{
+  background: #f00;
+  @extend .my1;
+}
+
+@mixin my_border($color,$size){
+  border:1px solid $color;
+  outline: 0;
+  border-radius: $size;
+}
+
+@mixin my_bg($color1,$color2){
+  background: -webkit-linear-gradient(top,$color1,$color2);
+  background: -ms-linear-gradient(top,$color1,$color2);
+  background: -o-linear-gradient(top,$color1,$color2);
+  background: -moz-linear-gradient(top,$color1,$color2);
+}
+
+@import "color";
+
+div{
+  color:$jd-red;
+  @include  my_border(#f00,20%);
+}
+
+a{
+  @include my_border(#00f,0%);
+}
+
+input{
+  @include my_border(#f0f,10%);  }

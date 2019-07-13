@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>post_login</title>
+</head>
+<body>
+	<div>
+		<input type="text" id="uname" placeholder="请输入用户名">
+		<input type="password" id="upwd" placeholder="请输入密码">
+		<button onclick="login()">登录</button>
+	</div>
+	<script>
+		function login(){
+			//dom接收数据
+			var u_name=uname.value;
+			var u_pwd=upwd.value;
+			//创建异步对象
+			var xhr=new XMLHttpRequest();
+			//监听事件
+			xhr.onreadystatechange=function(){
+				if(xhr.readyState==4&&xhr.status==200){
+					var result=xhr.responseText;
+					if(result==1){
+						alert('登录成功');
+					}else{
+						alert('登录失败')
+					}
+				};
+			}
+			//打开连接
+			xhr.open('post','http://127.0.0.1:8080/ajax/login_post',true);
+			//发送请求
+			var formdata="uname="+u_name+"&upwd="+u_pwd;
+			xhr.setRequestHeader('Content-Type','application/x-www-form-urlencoded');
+			xhr.send(formdata);
+		};
+	</script>
+</body>
+</html>

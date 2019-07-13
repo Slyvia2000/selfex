@@ -1,0 +1,52 @@
+div {
+  color: #00f; }
+
+div {
+  width: 260px; }
+
+div {
+  width: 7.5; }
+
+div {
+  background: -webkit-linear-gradient("bottom", #f00, #00f); }
+
+#demo {
+  width: 200px;
+  height: 200px;
+  background: #bfbf40; }
+
+.my-border, .my-bottom-border {
+  border: 1px solid transparent;
+  width: 400px;
+  margin-left: 20px; }
+
+.my-bottom-border {
+  border-bottom-color: #ff0000; }
+  .my-bottom-border:hover {
+    border-bottom-color: #0000ff; }
+
+.my1, .my2 {
+  width: 100px;
+  height: 100px; }
+
+.my2 {
+  background: #f00; }
+
+#color {
+  background: #f10215; }
+
+div {
+  color: #f10215;
+  border: 1px solid #f00;
+  outline: 0;
+  border-radius: 20%; }
+
+a {
+  border: 1px solid #00f;
+  outline: 0;
+  border-radius: 0%; }
+
+input {
+  border: 1px solid #f0f;
+  outline: 0;
+  border-radius: 10%; }

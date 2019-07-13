@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //定义构造函数
+         function student(sname,sage){
+             this.sname=sname;
+             this.sage=sage;
+         }
+         //原型对象中添加一个共有的方法
+         student.prototype.intr=function(){
+             console.log(`i am ${this.sname},i am ${this.sage}`);
+         }
+         //使用构造函数创建两个对象
+         var lilei=new student("lilei",11);
+         var hmm=new student("han meimei",12);
+         console.log(lilei);
+         console.log(hmm);
+         lilei.intr();
+         hmm.intr();
+         //验证
+         console.log(lilei.__proto__==hmm.__proto__);
+         console.log(lilei.__proto__==student.prototype);
+    </script>
+</body>
+</html>

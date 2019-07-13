@@ -1,0 +1,22 @@
+/*手写媒体查询，控制iframe的宽高*/
+.my_header,.my_footer{width: 100%;}
+@media screen and (min-width: 992px){
+    .my_header{height: 8rem;}
+    .my_footer{height:16rem }
+}
+@media screen and (max-width: 991px){
+    .my_header{height: 12rem;}
+    .my_footer{height: 30rem;}
+}
+/*css reset*/
+*{margin: 0;padding: 0;font-family: "simhei", Arial, Helvetica, sans-serif;}
+body{background: #f5f5f5;}
+/*通用字号*/
+.my_small{font-size: 0.8rem;}
+/*过渡*/
+.my_img_position{
+    transition: transform 1s;
+}
+.my_img_position:hover{
+    transform: scale(1.1);
+}

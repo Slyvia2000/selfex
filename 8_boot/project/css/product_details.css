@@ -1,0 +1,38 @@
+/*面包屑导航样式*/
+.breadcrumb-item + .breadcrumb-item::before{
+    content: '>';
+}
+/*小图宽度*/
+.my_img_w{
+    width: 28rem;
+}
+.my_img_w>ul>li>img{
+    width: 5.3rem;
+}
+/*卡片渐变色*/
+.alert{
+    background: linear-gradient(to bottom, #f0f0f0 0%, #e0e0e0 100%);
+    box-shadow: 0px 0px 10px #ccc;
+}
+/*价格*/
+.price2{
+    color: #0AA1ED;
+    font-size: 34px;
+    font-family: Arial;
+}
+/*规格*/
+.btn-outline-primary{
+    color:rgb(102,102,102);
+    background-color: transparent;
+    background-image: none;
+    border-color: rgb(102,102,102);
+}
+.my_input_w{
+    width: 2rem;
+}
+.btn-secondary{
+    background-image: linear-gradient(to bottom,#f0f0f0 0%, #e0e0e0 100%);
+}
+.my_btn_height{
+    height: 53px;
+}

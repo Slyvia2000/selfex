@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		function fun(){
+			for(var i=0,arr=[];i<3;i++){
+				arr[i]=function(){ i++;console.log(i) }
+			};
+			return arr;
+		}
+		var funs=fun();
+		/*
+		funs=[
+			function(){ console.log(i) };
+			function(){ console.log(i) };
+			function(){ console.log(i) };
+		]
+		i=3
+		*/
+		funs[0]();
+		funs[1]();
+		funs[2]();
+		console.log(funs);
+	</script>
+</body>
+</html>
