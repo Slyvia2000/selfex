@@ -1,5 +1,12 @@
-var car=new Object();
-car.id=120;
-car.brand='BMW';
-car['color']='black';
-console.log(car);
+// var car=new Object();
+// car.id=120;
+// car.brand='BMW';
+// car['color']='black';
+// console.log(car);
+var user=new Object();
+user.uid=101;
+user.uname='eric';
+user.upwd='123456';
+user.email='eric@qq.com';
+user.phone='13912345678';
+console.log(user);
